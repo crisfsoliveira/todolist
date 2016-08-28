@@ -1,2 +1,2 @@
 # todolist
-Build a to do list with Angular
+To do list build with angular
