@@ -7,22 +7,26 @@
 </head>
   
 <body ng-app="todoListApp">
-	<h1>My todo list</h1>
-
+	
 	<!-- This is the scope of the controller -->
 	<!-- the "ng..." it's the directive--> 
 	<div ng-controller="mainCtrl" class="list">
-		<input type="checkbox">
-		<label class="editing-label"> A sample to do list</label> <!-- use to display the value of the input-->
-		<input class="editing-label" type="text"> <!-- use to change the value of the input-->
+		<h1 ng-click="helloWorld()">My todo list</h1>
 
-		<div class="actions">i
-			<a href="">Edit</a>
-			<a href="">Save</a>
-			<a href="" ng-click="helloworld()" class="delete">Delete</a>
+		<input type="checkbox" ng-model="todo.completed">
+		<label class="editing-label" ng-click="helloWorld()">{{todo.name}}</label> <!-- use to display the value of the input and the {{}} tells angular to evaluat an expression-->
+		<input class="editing-label" type="text" ng-model="todo.name"> <!-- use to change the value of the input. todo as an object .name that store the value of the input -->
+
+		<div class="actions" ng-controller="coolCtrl">
+			<a href="" ng-click="whoAmI()">Edit</a>
+			<a href="" ng-click="helloWorld()">Save</a>
+			<a href="" class="delete">Delete</a>
 		</div>
 	</div>
 
+	<div ng-controller="imASibling">
+		{{foobar}} <!-- This is a angular expression {{}} -->
+	</div>
 	<script src="vendor/angular.js" type="text/javascript"></script>
 	<script src="scripts/app.js" type="text/javascript"></script>
 </body>
